@@ -1,0 +1,7 @@
+v 4
+file . "testbench8bits.vhd" "f09da4bfc8a9b3a90f1f9772312747c13012f6d0" "20191114161842.808":
+  entity test at 1( 0) + 0 on 25;
+  architecture arc of test at 7( 72) + 0 on 26;
+file . "registe_8_bits.vhd" "a9df68c1fbbcb1b13f290141e219c06c09872c0a" "20191114161842.573":
+  entity registre_8b at 1( 0) + 0 on 23;
+  architecture comp of registre_8b at 10( 235) + 0 on 24;

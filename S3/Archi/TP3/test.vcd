@@ -1,0 +1,69 @@
+$date
+  Thu Nov 14 17:18:45 2019
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 1 # wr $end
+$var reg 8 $ datain[7:0] $end
+$var reg 8 % dataout[7:0] $end
+$scope module comp $end
+$var reg 1 & clk $end
+$var reg 1 ' rst $end
+$var reg 1 ( wr $end
+$var reg 8 ) datain[7:0] $end
+$var reg 8 * dataout[7:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+0#
+b11111111 $
+bUUUUUUUU %
+0&
+0'
+0(
+b11111111 )
+bUUUUUUUU *
+#5000000
+1!
+1&
+#10000000
+0!
+1"
+0&
+1'
+#15000000
+1!
+b00000000 %
+1&
+b00000000 *
+#20000000
+0!
+0"
+1#
+0&
+0'
+1(
+#25000000
+1!
+b11111111 %
+1&
+b11111111 *
+#30000000
+0!
+1"
+0&
+1'
+#35000000
+1!
+b00000000 %
+1&
+b00000000 *
+#40000000

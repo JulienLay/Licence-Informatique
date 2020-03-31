@@ -1,0 +1,19 @@
+Je fais ce fichier texte pour m'expliquer sur ces 2 points :
+
+1. Quand on clique dans certains cas sur un produit on n'est pas forcément redirigé sur la page du même nom 
+(c'est dû au faite que j'ai voulu réaliser toutes les pages mais ce n'est pas possible dans le temps donné
+car il faudrait refaire chaque version homme/femme/enfant/accessoires ainsi que leur version connecté).
+
+2.Je me suis rendu compte (trop tard) que les fenêtres que j'ai fait pour certains cas ne sont pas les 
+mêmes que celles de départ (je fais des popups au lieu de garder la fenêtre de base) et je tiens donc à 
+m'en excuser (j'en tiendrai compte lors du prototype haute-fidélité).
+
+Au final je me suis rendu compte un peu tard que certaines choses n'allaient pas et que pour certains
+points je suis allé plus loin que ce qu'il aurait fallu faire. 
+
+Je tiens donc à m'excuser et je suis disponible à l'adresse julien-lay@outlook.fr si jamais vous avez 
+des questions à me poser en rapport.
+
+Bien sûr, encore une fois, j'en tiendrai compte pour le prototype haute-fidélité.
+
+Merci d'avoir pris le temps de lire ce .txt et merci de votre compréhension. 

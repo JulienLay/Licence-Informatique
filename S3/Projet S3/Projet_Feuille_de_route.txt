@@ -1,0 +1,10 @@
+Informations complémentaires au projet:
+
+- Nom : LAY
+- Prénom : Julien
+- Groupe TD et TP : TDA1 et TPA12
+- Code apogée : EDINF3G1
+- Titre du projet : Problème du voyageur de commerce
+- Année civile en cours : 2019-2020
+- Prénom et nom du tuteur : Pierre PICCININI
+- Mail du tuteur : pierre.piccinini@univ-tlse3.fr
