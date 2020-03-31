@@ -1,2 +1,0 @@
-# licence-info
-Licence Info
