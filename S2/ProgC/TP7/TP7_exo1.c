@@ -77,12 +77,32 @@ void VidageTamponEntree(void)
   printf("\n");
 }
 
-/*
+
 void LireLigne(char Ch[], int LongueurMax)
 {
-  fgets();
+  printf("\n");
+  printf("\n");
+  printf("-------------------------------------------\n");
+  printf("\n");
+  printf("Test de LireLigne\n\n");
+  printf("Veuillez taper une chaine de caractère de %d caractère(s) au maximum : \n",LongueurMax);
+  fgets(Ch,LongueurMax,stdin);
+
+  for(int i=0;i < LongueurMax; i++)
+  {
+    if (Ch[i] == '\0')
+    {
+      Ch[i] = '\n';
+    }
+  }
+
+  VidageTamponEntree();
+
+  printf("-------------------------------------------\n");
+  printf("\n");
+  printf("\n");
 }
-*/
+
 
 void LireContact(struct sContact *pContact)
 {
@@ -109,19 +129,17 @@ int main(void)
   struct sContact Contact = {"Julien","Lay","julien-lay@outlook.fr"};
 
   AfficherContact1(Contact);
-
   AfficherContact2(&Contact);
-
   VidageTamponEntree();
 
-  // LireLigne(Ch, LongueurMax);
+  int LongueurMax = 6;
+  char Ch[LongueurMax];
+  LireLigne(Ch, LongueurMax);
+
 
   struct sContact ContactTest;
-
   LireContact(&ContactTest);
-
   AfficherContact1(ContactTest);
-
   AfficherContact2(&ContactTest);
 
   return 0;
