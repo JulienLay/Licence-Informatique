@@ -8,14 +8,6 @@
 // de la chaîne représentée par Ch,
 // caractère ’\0’ non compris.
 
-//int strcmp(const char *Ch1, const char *Ch2)
-//La fonction strcmp retourne :
-//◦ 0 si les deux chaînes sont identiques ;
-//◦ un entier positif si la chaîne représentée par Ch1
-// est supérieure à la chaîne représentée par Ch2 selon l’ordre lexicographique;
-//◦ un entier négatif si la chaîne représentée par Ch1
-// est inférieure à la chaîne représentée par Ch2 selon l’ordre lexicographique.
-
 typedef struct sStats
 {
   int NbMots;
@@ -26,20 +18,19 @@ void Statistiques(FILE *f, tStats *pStats)
 {
   char ch[LONGUEURMAX];
 
-  f = fopen("texte.txt","rt");
-
-  fscanf(f,"%s",ch);
-  pStats->NbMots = 1;
-  pStats->LongMoy = strlen(ch);
+  pStats->NbMots = 0;
+  pStats->LongMoy = 0.0;
 
   while(feof(f) == 0)
   {
     fscanf(f,"%s",ch);
-    pStats->NbMots += 1;
+
+    pStats->NbMots++;
     pStats->LongMoy += strlen(ch);
   }
 
-  fclose(f);
+  pStats->NbMots--;
+  pStats->LongMoy -= strlen(ch);
 
   pStats->LongMoy /= (pStats->NbMots);
 
@@ -47,6 +38,16 @@ void Statistiques(FILE *f, tStats *pStats)
   printf("LongMoy : %f\n", pStats->LongMoy);
 }
 
+/* Lecture d'une ligne dans un fichier
+ * Lit une ligne de texte dans le fichier d'identificateur f et la stocke
+ * sous forme d'une chaine de caracteres terminee par \0 dans le tableau
+ *  Ch dont la longueur doit etre superieure ou egale a LongueurMax+1
+ * La lecture s'arrete :
+ * - soit a la fin de la ligne (\n n'est pas stocke dans le tableau),
+ * - soit quand LongueurMax caracteres ont ete lus.
+ * Apres la lecture, le tampon d'entree est systematiquement vide.
+ * La fonction retourne Ch ou NULL si la fin du fichier est atteinte.
+ */
 char *LireLigne(char Ch[], int LongueurMax, FILE *f)
 {
   char Format[32]; /* Chaine qui va contenir le format passe a scanf */
@@ -75,6 +76,7 @@ char *LireLigne(char Ch[], int LongueurMax, FILE *f)
     return NULL;
 }
 
+
 int main(void)
 {
   FILE *f;
@@ -82,9 +84,19 @@ int main(void)
   tStats testStats;
 
   printf("Veuillez taper le nom du fichier à traiter : ");
-  f = LireLigne(ch, LONGUEURMAX, f);
+  scanf("%s", ch);
+
+  f = fopen(ch,"rt");
+
+  if (f == NULL)
+  {
+    perror("Le fichier n'existe pas dans le dossier courant actuel");
+    return 1;
+  }
 
   Statistiques(f,&testStats);
+
+  fclose(f);
 
   return 0;
 }
