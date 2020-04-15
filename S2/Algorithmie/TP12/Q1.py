@@ -1,11 +1,19 @@
-def FBG(L):
-    n = len(L)
+def FBGL(liste):
+    taille = len(liste)
+    trouve = False
+    i=0
 
-    for i in L:
+    while i < taille and not trouve :
         nboc = 0
-        for j in L:
-            if i == j:
+        j = i
+        while j < taille and not trouve :
+            if liste[i] == liste[j] :
                 nboc += 1
-                if nboc > n//2:
-                    return i
-    return None
+                if nboc > taille // 2 :
+                    trouve = True
+            j += 1
+        i+=1
+    if trouve:
+        return liste[j-1]
+    else:
+        return None

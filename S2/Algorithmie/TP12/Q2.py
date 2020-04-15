@@ -1,12 +1,26 @@
-def MajL(Linit):
-    L, n = Linit, len(L)
+def MajL(listeInit):
+    liste = listeInit
+    taille = len(liste)
+    nboc = 0
+    trouve = False
 
-    for i in L:
+    while len(liste) != 0 and not trouve :
         nboc = 0
-        for j in L:
-            if i == j:
+        cand = liste[0]
+        liste_aux = []
+
+        while len(liste) != 0 and not trouve :
+            if cand == liste[0] :
                 nboc += 1
-                del i
-                if nboc > n//2 or len(L) <= n//2:
-                    return i
-    return None
+                if nboc > taille // 2 :
+                    trouve = True
+
+                else:
+                    liste_aux.append(liste[0])
+                del liste[0]
+            liste = liste_aux
+
+        if trouve :
+            return cand
+        else:
+            return None

@@ -1,18 +1,10 @@
 def EstMaj(x, Linit):
-    L = Linit
-    n = len(L)
-    for i in range(n):
-      if L[i] != L[i+1]:
-        del L[i]
-        del L[i+1]
+    est_maj, indice, compteur = False, 0, 0
 
-    if len(L) != 0:
-      majorant = L[0]
-      nboc = 0
-      for i in Linit:
-        if i == L[0]:
-          nboc += 1
-          if nboc > n//2:
-            return True
-
-    return False
+    while indice < len(liste) and not est_maj :
+        if x == liste[indice] :
+            compteur += 1
+        if compteur > len(liste) // 2 :
+            est_maj = True
+        indice += 1
+    return est_maj

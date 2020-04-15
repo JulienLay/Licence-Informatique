@@ -1,18 +1,18 @@
-def FB(L):
-    n = len(L)
-    max = 0
+def FB0(liste):
+    taille = len(liste)
+    nombre_max = 0
 
-    for i in L:
-        nombre_occurence = 0
-        for j in L:
-            if i == j:
-                nombre_occurence = nombre_occurence + 1
+    for elem1 in liste :
+        nboc = 0
+        for elem2 in liste :
+            if elem1 == elem2 :
+                nboc += 1
 
-        if max < nombre_occurence:
-            max = nombre_occurence
-            majorant = i
-  
-    if max > n//2:
+        if nombre_max < nboc :
+            nombre_max = nboc
+            majorant = elem1
+
+    if nombre_max > taille//2:
         return majorant
     else:
         return None
