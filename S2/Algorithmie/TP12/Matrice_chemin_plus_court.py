@@ -150,3 +150,26 @@ def PCourtChemin(MG,sd,sf) :
 sd = (0,2)
 sf = (2,2)
 print(PCourtChemin(MG,sd,sf))
+
+'''
+def k_voisins(lig,col,matrice,k):
+    #nb de lignes ?
+    nblig = len(matrice)
+    #nb de colonnes ? Comme c'est carré c'est identique
+    nbcol = nblig # = len(matrice[0]) on sait matrice non vide
+
+    #initialiser la liste des voisins à vide
+    liste_voisins = []
+
+    ligne_min = max(lig-k,0)
+    ligne_max = min(lig+k+1,nblig)
+    colonne_min = max(col-k,0)
+    colonne_max = min(col+k+1,nbcol)
+
+    for ligne in range(ligne_min,ligne_max) :
+        for colonne in range(colonne_min,colonne_max) :
+            liste_voisins.append((ligne,colonne))
+    return liste_voisins
+
+#attention on ne demande QUE la fonction. Ne pas faire input/print
+'''
