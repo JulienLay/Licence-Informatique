@@ -85,14 +85,14 @@ int main(void)
 
         if (res == 1)
         {
-            pj1 ++;
+            pj1++;
         }
 
         else
         {
                 if (res == -1)
                 {
-                    pj2 ++;
+                    pj2++;
                 }
         }
     }
