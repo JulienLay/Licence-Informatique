@@ -38,9 +38,9 @@ int numero(char *nom, char *prenom, struct etudiant etudiants[], int nb_etu, int
 {
     for (int j = 0; j < nb_etu; j++)
     {
-        if ((strcmp(etudiants[j].nom, *nom) == 0) && (strcmp(etudiants[j].prenom, *prenom) == 0))
+        if ((strcmp(etudiants[j].nom, nom) == 0) && (strcmp(etudiants[j].prenom, prenom) == 0))
         {
-            p_num_etu = etudiants[j].num_etu;
+            *p_num_etu = etudiants[j].num_etu;
             return 1;
         }
     }
@@ -59,18 +59,18 @@ void statistiques(struct note notes[], int nb_notes, float *p_min, float *p_max,
     {
         if (notes[n].valeur < pmin)
         {
-            pmin = notes[n].valeur;
+            *pmin = notes[n].valeur;
         }
 
         if (notes[n].valeur > pmax)
         {
-            pmax = notes[n].valeur;
+            *pmax = notes[n].valeur;
         }
 
-        p_moy += notes[n].valeur;
+        *p_moy += notes[n].valeur;
     }
 
-    p_moy /= nb_notes;
+    *p_moy /= nb_notes;
 }
 
 // Question 4
@@ -85,23 +85,16 @@ int main(void)
     lire_classe("l1.txt", etudiants, &nb_etu);
     lire_notes("notes_progc.txt", notes, &nb_notes);
 
-    char c_nom, c_prenom;
-    printf("Tapez un nom : ");
-    scanf("%s", c_nom);
-    printf("Tapez un prenom : ");
-    scanf("%s", c_prenom);
+    printf("Nom : "); scanf("%s", nom);
+    printf("Prénom : "); scanf("%s", prenom);
 
-    if (numero(&c_nom, &c_prenom, etudiants, nb_etu, &numero_etudiant) == 1)
-    {
-        float la_note = note(numero_etudiant, notes, nb_notes)
-        printf("La note : %f", &la_note);
-    }
+    numero(nom, prenom, etudiants, nb_etu, &numero_etudiant);
 
-    statistiques(notes, nb_notes, &min, &max, &moy);
+    printf("Note = %f\n", note(numero_etudiant, notes, nb_notes));
 
-    printf("Le minimum est : %f", &min);
-    printf("Le maximum est : %f", &max);
-    printf("La moyenne est : %f", &moy);
+    statisques(notes, nb_notes, &min, &max, &moy);
+
+    printf("min = %f, max = %f, moy = %f\n", min, max, moy);
 
     return 0;
 }
