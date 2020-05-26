@@ -1,0 +1,52 @@
+Contrôle Terminal Programmation en C (L1 SN – UPS)
+
+Session 2 – Juin 2019
+
+Corrigé « Questions Ouvertes »
+
+Question 1
+float note(int numero_etudiant, struct note notes[], int nb_notes) {
+
+  for (int i=0;i<nb_notes;i++)
+    if (numero_etudiant==notes[i].num_etu)
+      return notes[i].valeur;
+  return -1;
+}
+Question 2
+int numero(char *nom, char *prenom, struct etudiant etudiants[], int nb_etu, int *p_num_etu) {
+
+  for (int i=0;i<nb_etu;i++)
+    if (!strcmp(nom,etudiants[i].nom) && !strcmp(prenom,etudiants[i].prenom)) {
+      *p_num_etu=etudiants[i].num_etu;
+      return 1;
+    }
+  return 0;
+}
+Question 3
+void statisques(struct note notes[], int nb_notes, float *p_min, float *p_max, float *p_moy) {
+
+  float somme,min,max,note_courante;
+  somme=min=max=notes[0].valeur;
+  for (int i=1;i<nb_notes;i++) {
+    note_courante=notes[i].valeur;
+    somme+=note_courante;
+    if (note_courante<min) min=note_courante;
+    if (note_courante>max) max=note_courante;
+  }
+  *p_min=min;
+  *p_max=max;
+  *p_moy=somme/nb_notes;
+}
+Question 4
+int main(void) {
+    // ... cf. sujet
+
+    lire_classe("l1.txt", etudiants, &nb_etu);
+    lire_notes("notes_progc.txt", notes, &nb_notes);
+    printf("Nom : "); scanf("%s", nom);
+    printf("Prénom : "); scanf("%s", prenom);
+    numero(nom, prenom, etudiants, nb_etu, &numero_etudiant);
+    printf("Note = %f\n", note(numero_etudiant, notes, nb_notes));
+    statisques(notes, nb_notes, &min, &max, &moy);
+    printf("min = %f, max = %f, moy = %f\n", min, max, moy);    
+}

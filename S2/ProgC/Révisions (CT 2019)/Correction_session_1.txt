@@ -1,0 +1,72 @@
+Contrôle Terminal Programmation en C (L1 SN – UPS)
+
+Session 1 – Avril 2019
+
+Corrigé « Questions Ouvertes »
+
+Question 1
+/* précondition : pc->nbre < MAXCARTES */
+void ajouter_carte(struct paquet_cartes *pc, struct carte c) {
+
+    pc->cartes[pc->nbre] = c;
+    pc->nbre++;
+}
+/* précondition : pc->nbre > 0 */
+struct carte retirer_carte(struct paquet_cartes *pc) {
+
+    struct carte c = pc->cartes[pc->nbre-1];
+    pc->nbre--;
+    return c;
+}
+Question 2
+int meilleure_carte(struct carte c1, struct carte c2) {
+
+    if (c1.valeur == c2.valeur)
+        return 0;
+    if (c1.valeur == 1 || (c1.valeur > c2.valeur && c2.valeur != 1))
+        return 1;
+    else
+        return -1;
+}
+Question 3
+void distribuer_2joueurs(struct paquet_cartes *jeu, struct paquet_cartes *j1, struct paquet_cartes *j2) {
+
+    while (jeu->nbre > 0) {
+        ajouter_carte(j1, retirer_carte(jeu));
+        if (jeu->nbre > 0)
+            ajouter_carte(j2, retirer_carte(jeu));
+    }
+}
+Question 4
+int main (void) {
+
+    struct paquet_cartes jeu; /* jeu de cartes complet */
+    struct paquet_cartes j1, j2; /* mains des joueurs 1 et 2 */
+    int pj1=0, pj2=0; /* points des joueurs 1 et 2 */
+    struct carte cj1, cj2;
+    int res;
+
+    initialiser_jeu(&jeu);
+    melanger_jeu(&jeu);
+    distribuer_2joueurs(&jeu, &j1, &j2);
+
+    /* note : une condition suffirait ici car j1.nbre == j2.nbre */
+    while (j1.nbre>0 && j2.nbre>0) {
+        cj1 = retirer_carte(&j1);
+        cj2 = retirer_carte(&j2);
+        res = meilleure_carte(cj1, cj2);
+        if (res == 1)
+            pj1++;
+        else
+            if (res == -1)
+                pj2++;
+    }
+
+    if (pj1 > pj2)
+        printf("Le joueur 1 gagne !\n");
+    else if (pj2 > pj1 )
+        printf("Le joueur 2 gagne !\n");
+    else
+        printf("Egalite ! \n");
+    return 0;
+}
