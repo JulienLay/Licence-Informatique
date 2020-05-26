@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)https://moodle.univ-tlse3.fr/pluginfile.php/388220/mod_resource/content/2/18-19-CT-sess2-corrige.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>18-19-CT-sess2-corrige</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="contrôle-terminal-programmation-en-c-l1-sn-ups">Contrôle Terminal Programmation en C (L1 SN – UPS)</h1>
+<h2 id="session-2-juin-2019">Session 2 – Juin 2019</h2>
+<h2 id="corrigé-questions-ouvertes"><font color="firebrick">Corrigé « Questions Ouvertes »</font></h2>
+<h3 id="question-1">Question 1</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dt">float</span> note(<span class="dt">int</span> numero_etudiant, <span class="kw">struct</span> note notes[], <span class="dt">int</span> nb_notes) {</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">  <span class="cf">for</span> (<span class="dt">int</span> i=<span class="dv">0</span>;i&lt;nb_notes;i++)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="cf">if</span> (numero_etudiant==notes[i].num_etu)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">      <span class="cf">return</span> notes[i].valeur;</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">  <span class="cf">return</span> <span class="dv">-1</span>;</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">}</a></code></pre></div>
+<h3 id="question-2">Question 2</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="dt">int</span> numero(<span class="dt">char</span> *nom, <span class="dt">char</span> *prenom, <span class="kw">struct</span> etudiant etudiants[], <span class="dt">int</span> nb_etu, <span class="dt">int</span> *p_num_etu) {</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="cf">for</span> (<span class="dt">int</span> i=<span class="dv">0</span>;i&lt;nb_etu;i++)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="cf">if</span> (!strcmp(nom,etudiants[i].nom) &amp;&amp; !strcmp(prenom,etudiants[i].prenom)) {</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">      *p_num_etu=etudiants[i].num_etu;</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">      <span class="cf">return</span> <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">    }</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">}</a></code></pre></div>
+<h3 id="question-3">Question 3</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="dt">void</span> statisques(<span class="kw">struct</span> note notes[], <span class="dt">int</span> nb_notes, <span class="dt">float</span> *p_min, <span class="dt">float</span> *p_max, <span class="dt">float</span> *p_moy) {</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="dt">float</span> somme,min,max,note_courante;</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">  somme=min=max=notes[<span class="dv">0</span>].valeur;</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">  <span class="cf">for</span> (<span class="dt">int</span> i=<span class="dv">1</span>;i&lt;nb_notes;i++) {</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    note_courante=notes[i].valeur;</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    somme+=note_courante;</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="cf">if</span> (note_courante&lt;min) min=note_courante;</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">    <span class="cf">if</span> (note_courante&gt;max) max=note_courante;</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">  }</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">  *p_min=min;</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">  *p_max=max;</a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">  *p_moy=somme/nb_notes;</a>
+<a class="sourceLine" id="cb3-14" data-line-number="14">}</a></code></pre></div>
+<h3 id="question-4">Question 4</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="dt">int</span> main(<span class="dt">void</span>) {</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">    <span class="co">// ... cf. sujet</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    lire_classe(<span class="st">"l1.txt"</span>, etudiants, &amp;nb_etu);</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">    lire_notes(<span class="st">"notes_progc.txt"</span>, notes, &amp;nb_notes);</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">    printf(<span class="st">"Nom : "</span>); scanf(<span class="st">"%s"</span>, nom);</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">    printf(<span class="st">"Prénom : "</span>); scanf(<span class="st">"%s"</span>, prenom);</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">    numero(nom, prenom, etudiants, nb_etu, &amp;numero_etudiant);</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">    printf(<span class="st">"Note = %f</span><span class="sc">\n</span><span class="st">"</span>, note(numero_etudiant, notes, nb_notes));</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    statisques(notes, nb_notes, &amp;min, &amp;max, &amp;moy);</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">    printf(<span class="st">"min = %f, max = %f, moy = %f</span><span class="sc">\n</span><span class="st">"</span>, min, max, moy);    </a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">}</a></code></pre></div>
+
+
+</body></html>
